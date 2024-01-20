@@ -1,8 +1,13 @@
 <script setup>
+import { useBoardStore } from "../store/boardStore";
+
+const boardStore = useBoardStore();
 </script>
 
 <template>
-    <div>
-        <h1>My Nuxt App</h1>
-    </div>
+  <main>
+    <h1>Build a Trello Clone</h1>
+
+    <pre>{{ boardStore.board }}</pre>
+  </main>
 </template>
