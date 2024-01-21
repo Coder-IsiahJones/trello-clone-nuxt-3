@@ -1,3 +1,13 @@
+![Screenshot 2024-01-21 at 3 42 11 PM](https://github.com/Coder-IsiahJones/trello-clone-nuxt-3/assets/32337329/f0bddeed-9024-4194-94f7-d2d68c3e00ee)
+
+# Technology
+```bash
+~ Vue 3 / Nuxt 3 fundamentals
+~ Composition API
+~ State management with Pinia
+~ Tailwind CSS (Utility CSS)
+```
+
 # Nuxt 3 Minimal Starter
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
