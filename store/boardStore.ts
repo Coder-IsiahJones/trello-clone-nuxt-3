@@ -56,20 +56,22 @@ export const useBoardStore = defineStore("boardStore", () => {
   }
 
   function moveTask({
-    taskIndex,
+    fromTaskIndex,
+    toTaskIndex,
     fromColumnIndex,
     toColumnIndex,
   }: {
-    taskIndex: number;
+    fromTaskIndex: number;
+    toTaskIndex: number;
     fromColumnIndex: number;
     toColumnIndex: number;
   }) {
     const task = board.value.columns[fromColumnIndex].tasks.splice(
-      taskIndex,
+      fromTaskIndex,
       1
     )[0];
 
-    board.value.columns[toColumnIndex].tasks.push(task);
+    board.value.columns[toColumnIndex].tasks.splice(toTaskIndex, 0, task);
   }
 
   function moveColumn({
