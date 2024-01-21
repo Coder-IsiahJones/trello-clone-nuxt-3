@@ -1,6 +1,9 @@
+# Overview
+This is a Trello Clone project built with Nuxt 3, leveraging Vue 3 fundamentals, Composition API, Pinia for state management, and Tailwind CSS for styling. With this project, you can create a customizable Kanban board to manage tasks and projects efficiently.
+
 ![Screenshot 2024-01-21 at 3 42 11 PM](https://github.com/Coder-IsiahJones/trello-clone-nuxt-3/assets/32337329/f0bddeed-9024-4194-94f7-d2d68c3e00ee)
 
-# Technology
+# Technologies Used
 ```bash
 ~ Vue 3 / Nuxt 3 fundamentals
 ~ Composition API
