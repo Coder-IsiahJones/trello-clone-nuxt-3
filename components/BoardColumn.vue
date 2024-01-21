@@ -4,7 +4,7 @@ import { useBoardStore } from "../store/boardStore";
 const boardStore = useBoardStore();
 const router = useRouter();
 
-defineProps({
+const props = defineProps({
   column: {
     type: Object,
     required: true,
@@ -16,6 +16,7 @@ defineProps({
 });
 
 const editNameState = ref(false);
+const newTaskName = ref("");
 
 function deleteColumn(columnIndex) {
   boardStore.deleteColumn(columnIndex);
@@ -23,6 +24,15 @@ function deleteColumn(columnIndex) {
 
 function goToTask(taskId) {
   router.push(`/tasks/${taskId}`);
+}
+
+function addTask() {
+  boardStore.addTask({
+    taskName: newTaskName.value,
+    columnIndex: props.columnIndex,
+  });
+
+  newTaskName.value = "";
 }
 </script>
 
@@ -56,5 +66,13 @@ function goToTask(taskId) {
         </UCard>
       </li>
     </ul>
+
+    <UInput
+      v-model="newTaskName"
+      type="text"
+      icon="i-heroicons-plus-circle-solid"
+      placeholder="Create new column"
+      @keyup.enter="addTask"
+    />
   </UContainer>
 </template>
