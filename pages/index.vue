@@ -2,25 +2,33 @@
 import { useBoardStore } from "../store/boardStore";
 
 const boardStore = useBoardStore();
+
+const newColumnName = ref("");
+
+function addColumn() {
+  boardStore.addColumn(newColumnName.value);
+  newColumnName.value = "";
+}
 </script>
 
 <template>
   <div class="board-wrapper">
     <main class="board">
-      <UContainer
-        class="column"
-        v-for="column in boardStore.board.columns"
-        :key="column.name"
-      >
-        <h2 class="mb-4">{{ column.name }}</h2>
-        <ul>
-          <li v-for="task in column.tasks" :key="task.id">
-            <UCard class="mb-4">
-              <strong>{{ task.name }}</strong>
-              <p>{{ task.description }}</p>
-            </UCard>
-          </li>
-        </ul>
+      <BoardColumn
+        v-for="(column, columnIndex) in boardStore.board.columns"
+        :key="column.id"
+        :column="column"
+        :columnIndex="columnIndex"
+      />
+
+      <UContainer class="column">
+        <UInput
+          v-model="newColumnName"
+          type="text"
+          icon="i-heroicons-plus-circle-solid"
+          placeholder="Create new column"
+          @keyup.enter="addColumn"
+        />
       </UContainer>
     </main>
   </div>
