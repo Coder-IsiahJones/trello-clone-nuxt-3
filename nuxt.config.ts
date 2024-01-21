@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   css: ["~/assets/css/vello.css"],
   devtools: { enabled: true },
-  modules: ["@pinia/nuxt", "@nuxt/ui"],
+  modules: ["@pinia/nuxt", "@nuxt/ui", "@vueuse/nuxt"],
   colorMode: {
     preference: "light",
   },
